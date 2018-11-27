@@ -127,7 +127,7 @@ class CookieConsent extends Component {
       contentClasses,
       buttonClasses,
       buttonId,
-      learnMoreButon
+      learnMoreButton
     } = this.props;
 
     let myStyle = {};
@@ -164,7 +164,7 @@ class CookieConsent extends Component {
         <div style={myContentStyle} className={contentClasses}>
           {this.props.children}
           <div className="cookieConsent-rightSection">
-            {learnMoreButon}
+            {learnMoreButton}
             <button
               style={myButtonStyle}
               className={buttonClasses}
@@ -188,7 +188,7 @@ CookieConsent.propTypes = {
   buttonStyle: PropTypes.object,
   contentStyle: PropTypes.object,
   children: PropTypes.any, // eslint-disable-line react/forbid-prop-types
-  learnMoreButon: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+  learnMoreButton: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   disableStyles: PropTypes.bool,
   hideOnAccept: PropTypes.bool,
   onAccept: PropTypes.func,
