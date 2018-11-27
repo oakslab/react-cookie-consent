@@ -670,7 +670,8 @@ var CookieConsent = function (_Component) {
           containerClasses = _props3.containerClasses,
           contentClasses = _props3.contentClasses,
           buttonClasses = _props3.buttonClasses,
-          buttonId = _props3.buttonId;
+          buttonId = _props3.buttonId,
+          learnMoreButon = _props3.learnMoreButon;
 
 
       var myStyle = {};
@@ -710,16 +711,21 @@ var CookieConsent = function (_Component) {
           { style: myContentStyle, className: contentClasses },
           this.props.children,
           _react2.default.createElement(
-            "button",
-            {
-              style: myButtonStyle,
-              className: buttonClasses,
-              id: buttonId,
-              onClick: function onClick() {
-                _this2.accept();
-              }
-            },
-            buttonText
+            "div",
+            { className: "cookieConsent-rightSection" },
+            learnMoreButon,
+            _react2.default.createElement(
+              "button",
+              {
+                style: myButtonStyle,
+                className: buttonClasses,
+                id: buttonId,
+                onClick: function onClick() {
+                  _this2.accept();
+                }
+              },
+              buttonText
+            )
           )
         )
       );
@@ -737,6 +743,7 @@ CookieConsent.propTypes = {
   buttonStyle: _propTypes2.default.object,
   contentStyle: _propTypes2.default.object,
   children: _propTypes2.default.any, // eslint-disable-line react/forbid-prop-types
+  learnMoreButon: _propTypes2.default.any, // eslint-disable-line react/forbid-prop-types
   disableStyles: _propTypes2.default.bool,
   hideOnAccept: _propTypes2.default.bool,
   onAccept: _propTypes2.default.func,

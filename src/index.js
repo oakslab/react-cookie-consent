@@ -126,7 +126,8 @@ class CookieConsent extends Component {
       containerClasses,
       contentClasses,
       buttonClasses,
-      buttonId
+      buttonId,
+      learnMoreButon
     } = this.props;
 
     let myStyle = {};
@@ -162,16 +163,19 @@ class CookieConsent extends Component {
       <div className={`cookieConsent ${containerClasses}`} style={myStyle}>
         <div style={myContentStyle} className={contentClasses}>
           {this.props.children}
-          <button
-            style={myButtonStyle}
-            className={buttonClasses}
-            id={buttonId}
-            onClick={() => {
-              this.accept();
-            }}
-          >
-            {buttonText}
-          </button>
+          <div className="cookieConsent-rightSection">
+            {learnMoreButon}
+            <button
+              style={myButtonStyle}
+              className={buttonClasses}
+              id={buttonId}
+              onClick={() => {
+                this.accept();
+              }}
+            >
+              {buttonText}
+            </button>
+          </div>
         </div>
       </div>
     );
@@ -184,6 +188,7 @@ CookieConsent.propTypes = {
   buttonStyle: PropTypes.object,
   contentStyle: PropTypes.object,
   children: PropTypes.any, // eslint-disable-line react/forbid-prop-types
+  learnMoreButon: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   disableStyles: PropTypes.bool,
   hideOnAccept: PropTypes.bool,
   onAccept: PropTypes.func,
