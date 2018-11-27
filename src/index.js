@@ -89,7 +89,14 @@ class CookieConsent extends Component {
    * Set a persistent cookie
    */
   accept() {
-    const { cookieName, cookieValue, expires, hideOnAccept, onAccept, extraCookieOptions } = this.props;
+    const {
+      cookieName,
+      cookieValue,
+      expires,
+      hideOnAccept,
+      onAccept,
+      extraCookieOptions
+    } = this.props;
 
     // fire onAccept
     onAccept();
@@ -119,7 +126,7 @@ class CookieConsent extends Component {
       containerClasses,
       contentClasses,
       buttonClasses,
-      buttonId,
+      buttonId
     } = this.props;
 
     let myStyle = {};
@@ -155,17 +162,17 @@ class CookieConsent extends Component {
       <div className={`cookieConsent ${containerClasses}`} style={myStyle}>
         <div style={myContentStyle} className={contentClasses}>
           {this.props.children}
+          <button
+            style={myButtonStyle}
+            className={buttonClasses}
+            id={buttonId}
+            onClick={() => {
+              this.accept();
+            }}
+          >
+            {buttonText}
+          </button>
         </div>
-        <button
-          style={myButtonStyle}
-          className={buttonClasses}
-          id={buttonId}
-          onClick={() => {
-            this.accept();
-          }}
-        >
-          {buttonText}
-        </button>
       </div>
     );
   }
@@ -180,17 +187,9 @@ CookieConsent.propTypes = {
   disableStyles: PropTypes.bool,
   hideOnAccept: PropTypes.bool,
   onAccept: PropTypes.func,
-  buttonText: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-    PropTypes.element
-  ]),
+  buttonText: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.element]),
   cookieName: PropTypes.string,
-  cookieValue: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.bool,
-    PropTypes.number
-  ]),
+  cookieValue: PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.number]),
   debug: PropTypes.bool,
   expires: PropTypes.number,
   containerClasses: PropTypes.string,
@@ -208,7 +207,7 @@ CookieConsent.defaultProps = {
   acceptOnScroll: false,
   acceptOnScrollPercentage: 25,
   location: OPTIONS.BOTTOM,
-  onAccept: () => { },
+  onAccept: () => {},
   cookieName: "CookieConsent",
   cookieValue: true,
   buttonText: "I understand",
