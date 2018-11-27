@@ -163,19 +163,19 @@ class CookieConsent extends Component {
       <div className={`cookieConsent ${containerClasses}`} style={myStyle}>
         <div style={myContentStyle} className={contentClasses}>
           {this.props.children}
-          <div className="cookieConsent-rightSection">
-            {learnMoreButton}
-            <button
-              style={myButtonStyle}
-              className={buttonClasses}
-              id={buttonId}
-              onClick={() => {
-                this.accept();
-              }}
-            >
-              {buttonText}
-            </button>
-          </div>
+        </div>
+        <div className="cookieConsent-rightSection">
+          {learnMoreButton}
+          <button
+            style={myButtonStyle}
+            className={buttonClasses}
+            id={buttonId}
+            onClick={() => {
+              this.accept();
+            }}
+          >
+            {buttonText}
+          </button>
         </div>
       </div>
     );

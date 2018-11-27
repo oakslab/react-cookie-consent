@@ -709,23 +709,23 @@ var CookieConsent = function (_Component) {
         _react2.default.createElement(
           "div",
           { style: myContentStyle, className: contentClasses },
-          this.props.children,
+          this.props.children
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "cookieConsent-rightSection" },
+          learnMoreButton,
           _react2.default.createElement(
-            "div",
-            { className: "cookieConsent-rightSection" },
-            learnMoreButton,
-            _react2.default.createElement(
-              "button",
-              {
-                style: myButtonStyle,
-                className: buttonClasses,
-                id: buttonId,
-                onClick: function onClick() {
-                  _this2.accept();
-                }
-              },
-              buttonText
-            )
+            "button",
+            {
+              style: myButtonStyle,
+              className: buttonClasses,
+              id: buttonId,
+              onClick: function onClick() {
+                _this2.accept();
+              }
+            },
+            buttonText
           )
         )
       );
